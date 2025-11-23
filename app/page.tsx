@@ -37,7 +37,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className="text-2xl font-bold text-foreground">CineMatch</h1>
-              <p className="text-sm text-muted-foreground">AI-Powered Movie Recommendations</p>
+              <p className="text-sm text-muted-foreground">Movie Recommendations</p>
             </div>
           </div>
         </div>
