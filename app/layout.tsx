@@ -9,8 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "CineMatch - AI Movie Recommendations",
-  description: "Discover perfect movies based on your mood with AI-powered recommendations",
-  generator: "v0.app",
+  description: "Discover perfect movies based on your mood",
   icons: {
     icon: [
       {
