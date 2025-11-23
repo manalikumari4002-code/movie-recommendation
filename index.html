@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch - Movie Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="main-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-icon">🎬</div>
+                <div class="header-text">
+                    <h1>CineMatch</h1>
+                    <p>AI-Powered Movie Recommendations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Form Section -->
+            <div class="form-section">
+                <form id="movieForm">
+                    <!-- Input Section -->
+                    <div class="input-group">
+                        <label class="input-label">What's your mood today?</label>
+                        <p class="input-description">Describe your mood, and we'll find the perfect movie for you</p>
+                        
+                        <!-- Added search bar for searching by movie title or keywords -->
+                        <div class="search-bar-container">
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                placeholder="Or search for a movie title or keyword..."
+                                class="search-input"
+                            >
+                            <button type="button" id="searchBtn" class="search-btn">Search</button>
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="moodInput" 
+                                placeholder="e.g., I want something intense and mysterious..."
+                                class="mood-input"
+                            >
+                            <button type="submit" class="recommend-btn">Recommend</button>
+                        </div>
+                    </div>
+
+                    <!-- Filters Section -->
+                    <div class="filters-section">
+                        <p class="filters-title">Filter by region and language</p>
+                        <div class="filters-grid">
+                            <div class="filter-group">
+                                <label>Region</label>
+                                <select id="regionSelect" class="filter-select">
+                                    <option value="All Regions">All Regions</option>
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                    <option value="France">France</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="South Korea">South Korea</option>
+                                    <option value="India">India</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="China">China</option>
+                                    <option value="Brazil">Brazil</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label>Language</label>
+                                <select id="languageSelect" class="filter-select">
+                                    <option value="All Languages">All Languages</option>
+                                    <option value="English">English</option>
+                                    <option value="Japanese">Japanese</option>
+                                    <option value="Korean">Korean</option>
+                                    <option value="French">French</option>
+                                    <option value="Spanish">Spanish</option>
+                                    <option value="Hindi">Hindi</option>
+                                    <option value="Mandarin">Mandarin</option>
+                                    <option value="Italian">Italian</option>
+                                    <option value="German">German</option>
+                                    <option value="Portuguese">Portuguese</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" id="applyFiltersBtn" class="apply-filters-btn">Search with these filters</button>
+                    </div>
+
+                    <!-- Quick Suggestions -->
+                    <div id="quickSuggestions" class="quick-suggestions" style="display: none;">
+                        <p class="quick-title">Or try a quick mood:</p>
+                        <div class="mood-buttons">
+                            <button type="button" class="mood-btn" data-mood="Happy and uplifting">Happy and uplifting</button>
+                            <button type="button" class="mood-btn" data-mood="Emotional and dramatic">Emotional and dramatic</button>
+                            <button type="button" class="mood-btn" data-mood="Thrilling and intense">Thrilling and intense</button>
+                            <button type="button" class="mood-btn" data-mood="Relaxing and peaceful">Relaxing and peaceful</button>
+                            <button type="button" class="mood-btn" data-mood="Funny and lighthearted">Funny and lighthearted</button>
+                            <button type="button" class="mood-btn" data-mood="Action-packed">Action-packed</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsContainer" class="results-container" style="display: none;">
+                <div class="results-header">
+                    <h2>Perfect for your mood</h2>
+                    <p>Based on your preference, here are our AI-recommended movies</p>
+                </div>
+                <div id="moviesList" class="movies-grid"></div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">🎬</div>
+                <p>Describe your mood to get personalized movie recommendations</p>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>Finding perfect movies for you...</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Powered by AI. Recommendations are suggestions based on mood analysis.</p>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
